@@ -15,16 +15,7 @@ namespace Lab12
     {
         private const string PATH_TO_FILE = "SIVlogfile.json";
 
-        public static void WriteToFile(string methodName, string className)
-        {
-            Data datas = new(methodName, className);
-            datas.Print();
-            var newData = JsonSerializer.Serialize(datas);
-            using (StreamWriter sw = new(PATH_TO_FILE, true))
-            {
-                sw.WriteLine(newData);
-            }
-        }
+     
         public static void FindByRangeDate(DateTime start, DateTime end)
         {
             using (StreamReader sr = new(PATH_TO_FILE))
